@@ -143,9 +143,9 @@ public class CadastroAbaEnterInsurantData extends CadastrarSeguroPO {
         elementExist(btnOpenFile);
         this.btnOpenFile.click();
 
-        Thread.sleep(8000);
+        Thread.sleep(15000);
 
-        StringSelection str = new StringSelection("C:\\ProjetoTricentisAuto\\image\\imageTeste.jpg");
+        StringSelection str = new StringSelection("C:\\TricentisAutomacao\\image\\imageTeste.jpg");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
         // press Contol+V for pasting

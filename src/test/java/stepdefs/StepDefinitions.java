@@ -260,7 +260,7 @@ public class StepDefinitions {
     }
 
     @E("^clico no botao Next da aba Send Quote$")
-    public void clicoNoBotaoNextDaAbaSendQuote() {
+    public void clicoNoBotaoNextDaAbaSendQuote() throws InterruptedException {
         cadSendQuote.clicarBtnNext();
     }
 

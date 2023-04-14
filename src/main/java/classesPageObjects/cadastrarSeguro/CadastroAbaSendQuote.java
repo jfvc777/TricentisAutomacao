@@ -59,9 +59,10 @@ public class CadastroAbaSendQuote extends CadastrarSeguroPO {
         this.txtComents.sendKeys(param);
     }
 
-    public void clicarBtnNext(){
+    public void clicarBtnNext() throws InterruptedException {
         elementExist(btnNext);
         this.btnNext.click();
+        Thread.sleep(4000);
     }
 
     private void validarMSGSucesso(String param){
@@ -76,9 +77,10 @@ public class CadastroAbaSendQuote extends CadastrarSeguroPO {
         fecharBrowser();
     }
 
-    public void mensagemConfirmacao(String param){
+    public void mensagemConfirmacao(String param) throws InterruptedException {
         validarMSGSucesso(param);
         clicarOK();
+        Thread.sleep(15000);
     }
 
 
