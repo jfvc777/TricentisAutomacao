@@ -7,16 +7,16 @@ Funcionalidade: Cadastro de automobile novo no aplicativo WEB Tricentis
     Quando seleciono na opcao "Automobile"
 
   @Caso_01
-  Cenario: Cadastro preenchendo todos os parametros
+  Esquema do Cenario: : Cadastro preenchendo todos os parametros
     Quando estou na aba "Enter Vehicle Data"
-    E seleciono no campo Make a marca "Toyota"
-    E preencho no campo Engine Performance o valor "13"
+    E seleciono no campo Make a marca "<marca>"
+    E preencho no campo Engine Performance o valor "<engine>"
     E preencho no campo Date of Manufacture a data "10/10/2020"
     E seleciono no campo Number of Seats o numero "2"
     E seleciono no campo Fuel Type o valor "Gas"
-    E preencho no campo List Price o valor "541"
+    E preencho no campo List Price o valor "<price>"
     E preencho no campo License Plate Number o valor "A23A1"
-    E preencho no campo Annual Mileage o valor "122"
+    E preencho no campo Annual Mileage o valor "<anual>"
     E clico no botao Next da aba Enter Vehicle
     Entao sou direcionado para a aba "Enter Insurant Data"
     E preencho no campo First Name o valor "Jhon"
@@ -35,8 +35,10 @@ Funcionalidade: Cadastro de automobile novo no aplicativo WEB Tricentis
     Entao sou direcionado para a aba "Enter Product Data"
     E preencho no campo Start Date o valor requerido
     E seleciono no campo Insurance Sum o valor "3.000.000,00"
+    E seleciono no campo Merit Rating o valor "Bonus 1"
     E seleciono no campo Damage Insurance o valor "Full Coverage"
-    E seleciono no campo Optional Products o valor "Euro Protection"
+    E seleciono no campo Optional Products o valor "Euro Protection" da opcao Automobile
+    E seleciono no campo Courtesy Car o valor "Yes"
     E clico no botao Next da aba Enter Product
     Entao sou direcionado para a aba "Select Price Option"
     E seleciono o plano "SILVER"
@@ -50,6 +52,13 @@ Funcionalidade: Cadastro de automobile novo no aplicativo WEB Tricentis
     E preencho no campo Comments o comentario "E um teste"
     E clico no botao Next da aba Send Quote
     Entao validamos que o mensagem de confirmacao contem "Sending e-mail success!" e clicar no botao OK
+    Exemplos:
+      | marca         | engine | price  | anual  |
+      | Honda         | 1      | 500    | 100    |
+      | Mercedes Benz | 2000   | 100000 | 100000 |
+      | Opel          | 1      | 100000 | 100000 |
+      | Suzuki        | 2000   | 500    | 100000 |
+      | BMW           | 2000   | 100000 | 100    |
 
   @Caso_02
   Cenario: Cadastro preenchendo somente os parametros obrigatorios

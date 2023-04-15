@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/features/cadastroSeguro",
         glue = {"stepdefs", "hooks"},
-        tags = ("@cadastro_seguro_camper"),
+        tags = ("@cadastro_seguro_truck and @Caso_01"),
         plugin = {
                 "pretty",
                 "html:target/cucumber",
