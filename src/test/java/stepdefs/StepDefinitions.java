@@ -273,4 +273,10 @@ public class StepDefinitions {
     public void anexoAImagenDesejadaNaOpcaoPicture() throws AWTException, InterruptedException {
         cadEnterInsurant.carregarImagen();
     }
+
+    @Entao("se vai mostrar o mensagem {string}")
+    public void seVaiMostrarOMensagem(String mensagem) throws InterruptedException {
+        cadSelectPrice = new CadastroAbaSelectPrice();
+        cadSelectPrice.mensagemConfirmacao(mensagem);
+    }
 }

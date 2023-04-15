@@ -3,6 +3,8 @@ package classesPageObjects.cadastrarSeguro;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CadastroAbaSendQuote extends CadastrarSeguroPO {
     /******************Aba Send Quote*********************/
     @FindBy(xpath = "//input[@id='email']")
@@ -65,13 +67,13 @@ public class CadastroAbaSendQuote extends CadastrarSeguroPO {
         Thread.sleep(4000);
     }
 
-    private void validarMSGSucesso(String param){
+    private void validarMSGSucesso(String param) {
         elementExist(lblSucesso);
         String validao = lblSucesso.getText();
-        //Assert.assertEquals(param,validao);
+        assertEquals(param, validao);
     }
 
-    private void clicarOK(){
+    private void clicarOK() {
         elementExist(btnOK);
         this.btnOK.click();
         fecharBrowser();
@@ -80,7 +82,7 @@ public class CadastroAbaSendQuote extends CadastrarSeguroPO {
     public void mensagemConfirmacao(String param) throws InterruptedException {
         validarMSGSucesso(param);
         clicarOK();
-        Thread.sleep(15000);
+        Thread.sleep(21000);
     }
 
 

@@ -7,7 +7,20 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CadastrarSeguroPO extends UtilTestePO {
+    /******************Paginas*********************/
+    @FindBy(css = "#nav_camper")
+    private WebElement optCamper;
+    @FindBy(css = "#nav_automobile")
+    private WebElement optAutomobile;
+    @FindBy(css = "#nav_motorcycle")
+    private WebElement optMotorcycle;
+    @FindBy(css = "#nav_truck")
+    private WebElement optTruck;
+    @FindBy(id = "#selectedinsurance")
+    private WebElement lblInsurance;
 
     /******************Aba Enter Vehicle Data*********************/
     @FindBy(xpath = "//a[@id='entervehicledata']")
@@ -64,7 +77,7 @@ public class CadastrarSeguroPO extends UtilTestePO {
 
     public void compararAba(String aba) {
         String comparacaoAba = escolherAbaValidacao(aba);
-        //Assert.assertEquals(aba, comparacaoAba);
+        assertEquals(aba, comparacaoAba);
 
     }
 
@@ -105,5 +118,7 @@ public class CadastrarSeguroPO extends UtilTestePO {
         Select sltOb = new Select(param);
         sltOb.selectByVisibleText(element);
     }
+
+
 
 }

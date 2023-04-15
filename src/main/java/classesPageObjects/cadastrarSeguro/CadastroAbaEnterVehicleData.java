@@ -4,39 +4,47 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CadastroAbaEnterVehicleData extends CadastrarSeguroPO {
-    /******************Aba Enter Vehicle Data*********************/
-    @FindBy(xpath = "//a[@id='entervehicledata']")
+    /******************OPCAO GERAL*********************/
+    @FindBy(name = "Enter Vehicle Data")
     private WebElement lblAbaEnterVehicle;
     @FindBy(xpath = "//select[@id='make']")
     private WebElement cmbMake;
-    @FindBy(xpath = "//select[@id='model']")
-    private WebElement cmbModel;
-    @FindBy(xpath = "//input[@id='cylindercapacity']")
-    private WebElement cmpCylinder;
     @FindBy(xpath = "//input[@id='engineperformance']")
     private WebElement cmpEngineer;
     @FindBy(xpath = "//input[@id='dateofmanufacture']")
     private WebElement cmpDatemanu;
     @FindBy(xpath = "//select[@id='numberofseats']")
     private WebElement cmbNumberSeats1;
-    @FindBy(xpath = "//select[@id='numberofseatsmotorcycle']")
-    private WebElement cmbNumberSeats2;
     @FindBy(xpath = "//select[@id='fuel']")
     private WebElement cmbFuel;
-    @FindBy(xpath = "//input[@id='payload']")
-    private WebElement cmpPayload;
-    @FindBy(xpath = "//input[@id='totalweight']")
-    private WebElement cmpTotalWeight;
     @FindBy(xpath = "//input[@id='listprice']")
     private WebElement cmpListPrice;
     @FindBy(xpath = "//input[@id='licenseplatenumber']")
     private WebElement cmpLicensePlateNumber;
     @FindBy(xpath = "//input[@id='annualmileage']")
     private WebElement cmpAnualMil;
+    /******************OPCAO TRUCK*********************/
+    @FindBy(xpath = "//input[@id='payload']")
+    private WebElement cmpPayload;
+    @FindBy(xpath = "//input[@id='totalweight']")
+    private WebElement cmpTotalWeight;
+    /******************OPCAO MOTORCYCLE*********************/
+    @FindBy(xpath = "//select[@id='model']")
+    private WebElement cmbModel;
+    @FindBy(xpath = "//input[@id='cylindercapacity']")
+    private WebElement cmpCylinder;
+    @FindBy(xpath = "//select[@id='numberofseatsmotorcycle']")
+    private WebElement cmbNumberSeats2;
+
+
+
+
+
     @FindBy(xpath = "//button[@id='nextenterinsurantdata']")
     private WebElement btnNextEnterVehicule;
     @FindBy(xpath = "//input[@id='startdate']")
     private WebElement cmpStartDate;
+
 
     protected String sltOpcao = "//body/div[@id='site-content']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/section[1]/div[7]/p[1]/label[%s]";
 
