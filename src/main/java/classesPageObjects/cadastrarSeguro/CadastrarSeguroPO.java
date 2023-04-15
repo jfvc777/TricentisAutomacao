@@ -93,7 +93,7 @@ public class CadastrarSeguroPO extends UtilTestePO {
         return formato;
     }
 
-    public String adicionarMesDataAtual(String param){
+    public String adicionarMesDataAtual(String param) {
         String formato = param;
         String[] formatoParse = new String[0];
         formatoParse = param.split("/");
@@ -101,11 +101,11 @@ public class CadastrarSeguroPO extends UtilTestePO {
         int dia = Integer.parseInt(formatoParse[0]);
 
         if (Integer.parseInt(formatoParse[0]) > 12) {
-            if(mes>12){
+            if (mes > 12) {
                 mes = 01;
             }
 
-            if(dia>27){
+            if (dia > 27) {
                 dia = 27;
             }
             formato = mes + "/" + dia + "/" + formatoParse[2];
@@ -119,6 +119,26 @@ public class CadastrarSeguroPO extends UtilTestePO {
         sltOb.selectByVisibleText(element);
     }
 
+    public void clicarOpcao(String opcao) {
+        switch (opcao) {
+            case "Automobile":
+                elementExist(optAutomobile);
+                optAutomobile.click();
+                break;
+            case "Truck":
+                elementExist(optTruck);
+                optTruck.click();
+                break;
+            case "Motorcycle":
+                elementExist(optMotorcycle);
+                optMotorcycle.click();
+                break;
+            case "Camper":
+                elementExist(optCamper);
+                optCamper.click();
+                break;
+        }
+    }
 
 
 }

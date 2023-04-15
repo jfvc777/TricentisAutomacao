@@ -94,6 +94,7 @@ public class StepDefinitions {
 
     @E("^preencho no campo Annual Mileage o valor \"([^\"]*)\"$")
     public void preenchoNoCampoAnnualMileageOValor(String param) throws Throwable {
+        cadEnterVehicle = new CadastroAbaEnterVehicleData();
         cadEnterVehicle.preencherAnualMill(param);
     }
 
@@ -183,7 +184,7 @@ public class StepDefinitions {
 
     @E("^seleciono no campo Optional Products o valor \"([^\"]*)\"$")
     public void selecionoNoCampoOptionalProductsOValor(String param) throws Throwable {
-        cadEnterProduct.clicarOpctionalProduct(param);
+        cadEnterProduct.clicarOpctionalProductTruck(param);
     }
 
     @E("^seleciono no campo Courtesy Car o valor \"([^\"]*)\"$")
@@ -278,5 +279,20 @@ public class StepDefinitions {
     public void seVaiMostrarOMensagem(String mensagem) throws InterruptedException {
         cadSelectPrice = new CadastroAbaSelectPrice();
         cadSelectPrice.mensagemConfirmacao(mensagem);
+    }
+
+    @Quando("seleciono na opcao {string}")
+    public void selecionoNaOpcao(String opcao) {
+        cadastrarSeguroPO.clicarOpcao(opcao);
+    }
+
+    @E("seleciono no campo Optional Products o valor {string} da opcao Automobile")
+    public void selecionoNoCampoOptionalProductsOValorDaOpcaoAutomobile(String param) {
+        cadEnterProduct.clicarOpctionalProduct(param);
+    }
+
+    @E("seleciono no campo Right Hand Drive o valor {string} na opcao Camper")
+    public void selecionoNoCampoRightHandDriveOValorNaOpcaoCamper(String param) {
+        cadEnterVehicle.clicarOpcaoRightCamper(param);
     }
 }

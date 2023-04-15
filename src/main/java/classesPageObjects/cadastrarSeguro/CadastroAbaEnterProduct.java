@@ -20,6 +20,7 @@ public class CadastroAbaEnterProduct extends CadastrarSeguroPO {
     private WebElement btnNextProduct;
 
     protected String optionalProduct = "//body/div[@id='site-content']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/section[3]/div[5]/p[1]/label[%s]";
+    protected String optionalProductTruck = "//body/div[@id='site-content']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/section[3]/div[4]/p[1]/label[%s]/span";
 
     public CadastroAbaEnterProduct() {
         carregarPageFactory();
@@ -61,6 +62,19 @@ public class CadastroAbaEnterProduct extends CadastrarSeguroPO {
         return stringToWebElement(param);
     }
 
+    private WebElement selecaoOptionalProductsTruck(String param) {
+        String formatar = param.toLowerCase();
+        switch (formatar) {
+            case "euro protection":
+                param = String.format(optionalProductTruck, "1");
+                break;
+            case "legal defense insurance":
+                param = String.format(optionalProductTruck, "2");
+                break;
+        }
+        return stringToWebElement(param);
+    }
+
     public void clicarOpctionalProduct(String param) {
         elementExist(selecaoOptionalProducts(param));
         selecaoOptionalProducts(param).click();
@@ -70,6 +84,11 @@ public class CadastroAbaEnterProduct extends CadastrarSeguroPO {
         elementExist(btnNextProduct);
         this.btnNextProduct.click();
         return new CadastroAbaSelectPrice();
+    }
+
+    public void clicarOpctionalProductTruck(String param) {
+        elementExist(selecaoOptionalProductsTruck(param));
+        selecaoOptionalProductsTruck(param).click();
     }
 
 }

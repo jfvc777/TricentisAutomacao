@@ -47,7 +47,7 @@ public class CadastroAbaEnterVehicleData extends CadastrarSeguroPO {
 
 
     protected String sltOpcao = "//body/div[@id='site-content']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/section[1]/div[7]/p[1]/label[%s]";
-
+    protected String sltOpcaoCamper = "//body/div[@id='site-content']/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/section[1]/div[5]/p[1]/label[%s]/span";
     private WebElement selecaoOpcaoRight(String opcao) {
         String formatar = opcao.toLowerCase();
         switch (formatar) {
@@ -61,6 +61,19 @@ public class CadastroAbaEnterVehicleData extends CadastrarSeguroPO {
         return stringToWebElement(sltOpcao);
     }
 
+    private WebElement selecaoOpcaoRightCamper(String opcao) {
+        String formatar = opcao.toLowerCase();
+        switch (formatar) {
+            case "yes":
+                sltOpcaoCamper = String.format(sltOpcaoCamper, "1");
+                break;
+            case "no":
+                sltOpcaoCamper = String.format(sltOpcaoCamper, "2");
+                break;
+        }
+        return stringToWebElement(sltOpcaoCamper);
+    }
+
     public CadastroAbaEnterVehicleData(){
         carregarPageFactory();
     }
@@ -68,6 +81,11 @@ public class CadastroAbaEnterVehicleData extends CadastrarSeguroPO {
     public void clicarOpcaoRight(String opcao) {
         elementExist(selecaoOpcaoRight(opcao));
         selecaoOpcaoRight(opcao).click();
+    }
+
+    public void clicarOpcaoRightCamper(String opcao) {
+        elementExist(selecaoOpcaoRightCamper(opcao));
+        selecaoOpcaoRightCamper(opcao).click();
     }
 
     public void selecionarMake(String param) {

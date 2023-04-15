@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/features",
+        features = "src/test/features/cadastroSeguro",
         glue = {"stepdefs", "hooks"},
-        tags = ("@Caso_01"),
+        tags = ("@cadastro_seguro_camper"),
         plugin = {
                 "pretty",
                 "html:target/cucumber",
